@@ -2,12 +2,13 @@ defmodule CardsTest do
   use ExUnit.Case
   doctest Cards
 
-  test "greets the world" do
-    assert Cards.hello() == "Qualquer coisa"
-  end
-
   test "my deck" do
-    assert Cards.create_deck() == ["Ace", "Two", "Three"]
+    deck = ["Ace of Spades", "Two of Spades", "Three of Spades", "Four of Spades",
+    "Five of Spades", "Ace of Clubs", "Two of Clubs", "Three of Clubs",
+    "Four of Clubs", "Five of Clubs", "Ace of Hearts", "Two of Hearts",
+    "Three of Hearts", "Four of Hearts", "Five of Hearts", "Ace of Diamonds",
+    "Two of Diamonds", "Three of Diamonds", "Four of Diamonds", "Five of Diamonds"]
+    assert Cards.create_deck() == deck
   end
 
   test "shuffle my deck" do
@@ -16,7 +17,8 @@ defmodule CardsTest do
 
 
   test "my deck contains" do
-    assert Cards.contains(["Ace", "Two", "Three"], "Two")
+    deck = Cards.create_card
+    assert Cards.contains?(deck, "Two") == false
   end
 
 end

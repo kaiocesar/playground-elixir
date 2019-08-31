@@ -4,21 +4,17 @@ defmodule Cards do
   """
 
   @doc """
-  Hello world.
+  Cards
 
-  ## Examples
-
-      iex> Cards.hello()
-      "Qualquer coisa"
-
+  ## Cards endpoints
       iex> Cards.create_deck
-      ["Ace", "Two", "Three"]
+      ["Ace of Spades", "Two of Spades", "Three of Spades", "Four of Spades",
+        "Five of Spades", "Ace of Clubs", "Two of Clubs", "Three of Clubs",
+        "Four of Clubs", "Five of Clubs", "Ace of Hearts", "Two of Hearts",
+        "Three of Hearts", "Four of Hearts", "Five of Hearts", "Ace of Diamonds",
+        "Two of Diamonds", "Three of Diamonds", "Four of Diamonds", "Five of Diamonds"]
 
   """
-  def hello do
-    "Qualquer coisa"
-  end
-
   def create_deck do
     values = ["Ace", "Two", "Three", "Four", "Five"]
     suits = ["Spades", "Clubs", "Hearts", "Diamonds"]
@@ -61,5 +57,6 @@ defmodule Cards do
     |> Cards.shuffle
     |> Cards.deal(hand_size)
 
+  end
 
 end
