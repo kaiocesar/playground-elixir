@@ -18,9 +18,8 @@ defmodule Cards do
   def create_deck do
     values = ["Ace", "Two", "Three", "Four", "Five"]
     suits = ["Spades", "Clubs", "Hearts", "Diamonds"]
-    # nested arrays. Resolving list of list
-    for suit <- suits, value <- values do
-        "#{value} of #{suit}"
+    for suit <- suits do
+      Enum.map(values, fn value -> "#{value} of #{suit}" end)
     end
   end
 
